@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <section id="banner">
+            <ul class="clearfix">
+                <li>
+                    <img src="./images/banner1.png" alt="코스메틱">
+                    <i class="fa-regular fa-circle-down cos_btn"></i>
+                </li>
+                <li>
+                    <img src="./images/banner2.png" alt="가방">
+                    <i class="fa-regular fa-circle-down bag_btn"></i>
+                </li>
+                <li>
+                    <img src="./images/banner3.png" alt="신발">
+                    <i class="fa-regular fa-circle-down shoe_btn"></i>
+                </li>
+            </ul>
+        </section>
+        <section id="contents">
+            <article class="con_cos">
+                <h2>코스메틱</h2>
+                <i class="fa-solid fa-circle-xmark"></i>
+            </article>
+            <article class="con_bag">
+                <h2>가방</h2>
+                <i class="fa-solid fa-circle-xmark"></i>
+            </article>
+            <article class="con_shoe">
+                <h2>신발</h2>
+                <i class="fa-solid fa-circle-xmark"></i>
+            </article>
+        </section>
+        <footer id="footer">
+            <p>푸터 영역입니다</p>
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $("#contents article i").click(function(){
+            $(this).parent().slideUp();
+        });
+
+        $(".cos_btn").click(function(){
+            // $(".con_cos").stop().slideToggle();
+            $("#contents").find(".con_cos").stop().slideToggle().siblings("article").stop().slideUp();
+        });
+        $(".bag_btn").click(function(){
+            // $(".con_bag").stop().slideToggle();
+            $("#contents").find(".con_bag").stop().slideToggle().siblings("article").stop().slideUp();
+
+        });
+        $(".shoe_btn").click(function(){
+            // $(".con_shoe").stop().slideToggle();
+            $("#contents").find(".con_shoe").stop().slideToggle().siblings("article").stop().slideUp();
+
+        });
+
+        const List = $("#banner > ul");
+
+        setInterval(function(){
+            List.animate({left:"-1920px"},800,function(){
+                $("#banner > ul > li:first-child").appendTo(List);
+                List.css("left","0");
+            });
+        },6000);
+      
+
+    </script>
+</body>
+</html>
