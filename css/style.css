@@ -40,7 +40,10 @@ img{width: 100%; display: block;}
     left: 0;
 }
 
-#banner {overflow: hidden;}
+#banner {
+    overflow: hidden;
+    height: 100vh;
+}
 #banner > ul{
     width: 5760px; 
     position: relative;
